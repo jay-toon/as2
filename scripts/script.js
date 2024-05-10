@@ -1,5 +1,4 @@
 // This shit needs to be refactored in many files. I'm too lazy for it. Lord help me.
-
 let lives = 3;
 
 const main = document.querySelector('main'); // This will select the main div element in the HTML file and store it in the main variable.
@@ -100,19 +99,21 @@ function startGame() {
 
 // This function will be used to supply lives functionality to Pacman, including resetting the position of pacman and the ghosts for a fairer continuation within the game.
 function loseLife() { // Lives mechanic, called on a death and will return a preferred output.
-    if (lives == 0) { // Death Event
-        alert('Game Over');
-        username = prompt("Enter your name, or leave this blank to remain anonymous.");
-        if (!username) {
-            username = 'Player';
-        }
-        submitScore(username, score);
-    }
-
-    else { // Life Lost Event
+    if (lives>=1) {
         pacman.lives--;
         setTimeout(5000);
         maze[2][8] = 3;
+    }
+
+    else { // Life Lost Event
+        if (lives == 0) { // Death Event
+            alert('Game Over');
+            username = prompt("Enter your name, or leave this blank to remain anonymous.");
+            if (!username) {
+                username = 'Player';
+            }
+            submitScore(username, score);
+        }
     }
 }
 
