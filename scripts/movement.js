@@ -3,6 +3,8 @@ let UP_ARROW = false;
 let DOWN_ARROW = false; 
 let LEFT_ARROW = false; 
 let RIGHT_ARROW = false; 
+let position = player.getBoundingClientRect();
+
 
 function key_released(event) {
     if (event.key === 'ArrowUp') {
@@ -28,7 +30,33 @@ function key_pressed(event) {
     }
 }
 
-
+setInterval(function() {
+    if(downPressed) {
+        let bottomCheck = position.bottom;
+        let leftCheck = position.left;
+        let rightCheck = position.right;
+        
+        
+        playerTop++;
+        player.style.top = playerTop + 'px';
+        playerMouth.classList = 'down';
+    }
+    else if(upPressed) {
+        playerTop--;
+        player.style.top = playerTop + 'px';
+        playerMouth.classList = 'up';
+    }
+    else if(leftPressed) {
+        playerLeft--;
+        player.style.left = playerLeft + 'px';
+        playerMouth.classList = 'left';
+    }
+     else if(rightPressed) {
+        playerLeft++;
+        player.style.left = playerLeft + 'px';
+        playerMouth.classList = 'right';
+    }
+}, 10);
 
 
 

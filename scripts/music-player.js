@@ -1,5 +1,5 @@
 /* 
-This music was created by Camellia. I have received Camellia's permission to use his music in this project. (SEE Image: Camellia's Permission)
+This music was created by Camellia. I have received Camellia's permission to use his music in this project. (SEE Image: Camellia's Permission.png)
 
 Song List:
 1. Camellia - Exit This Earth's Atomosphere

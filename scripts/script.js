@@ -3,7 +3,7 @@ let lives = 3;
 
 const main = document.querySelector('main'); // This will select the main div element in the HTML file and store it in the main variable.
 
-//Player = 2, Wall = 1, Enemy = 3, Point = 0
+//Point = 0,  Wall = 1, Player = 2, Enemy = 3, 
 let maze = [ 
      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // In the maze of neon, where the ghosts reside,
     [1, 2, 0, 1, 0, 0, 0, 0, 3, 1], // Pacman roams, with nowhere to hide.
@@ -55,28 +55,7 @@ class Pacman {
     playerLeft = 0;
 }
 
-setInterval(function() {
-    if(downPressed) {
-        playerTop++;
-        player.style.top = playerTop + 'px';
-        playerMouth.classList = 'down';
-    }
-    else if(upPressed) {
-        playerTop--;
-        player.style.top = playerTop + 'px';
-        playerMouth.classList = 'up';
-    }
-    else if(leftPressed) {
-        playerLeft--;
-        player.style.left = playerLeft + 'px';
-        playerMouth.classList = 'left';
-    }
-     else if(rightPressed) {
-        playerLeft++;
-        player.style.left = playerLeft + 'px';
-        playerMouth.classList = 'right';
-    }
-}, 10);
+
 
 
 
@@ -99,7 +78,7 @@ function startGame() {
 
 // This function will be used to supply lives functionality to Pacman, including resetting the position of pacman and the ghosts for a fairer continuation within the game.
 function loseLife() { // Lives mechanic, called on a death and will return a preferred output.
-    if (lives>=1) {
+    if (pacman.lives>=1) {
         pacman.lives--;
         setTimeout(5000);
         maze[2][8] = 3;
