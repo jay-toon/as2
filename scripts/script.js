@@ -54,6 +54,7 @@ function startGame() {
 
         if (keyUp() === true) {
             pauseGame = false;
+            document.getElementById('start').style.display = 'none';
         }
     }
 }
@@ -78,7 +79,7 @@ function loseLife() { // Lives mechanic, called on a death and will return a pre
     }
 }
 
-
+startGame(); // Starts the game
 
 
 // Submits the score to the localStorage "database"
