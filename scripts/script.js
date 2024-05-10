@@ -1,3 +1,10 @@
+// Importing other files into here
+import  './submitScore.js';
+import './firstTimeLoad.js';
+import './gameOver.js';
+
+
+
 // This shit needs to be refactored in many files. I'm too lazy for it. Lord help me.
 let lives = 3;
 
@@ -44,9 +51,6 @@ for (let y of maze) {
         main.appendChild(block); 
     }
 }
-
-//Player movement
-
 
 class Pacman {
     player = document.querySelector('#player');
