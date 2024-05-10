@@ -1,10 +1,3 @@
-// Importing other files into here
-import  './submitScore.js';
-import './firstTimeLoad.js';
-import './gameOver.js';
-
-
-
 // This shit needs to be refactored in many files. I'm too lazy for it. Lord help me.
 let lives = 3;
 
@@ -52,19 +45,6 @@ for (let y of maze) {
     }
 }
 
-class Pacman {
-    player = document.querySelector('#player');
-    playerMouth = player.querySelector('.mouth');
-     playerTop = 0;
-    playerLeft = 0;
-}
-
-
-
-
-
-// This section will be used for the extra code I will have to add to meet the requirements outlined within the assignment. This will include the code for the enemies, the points, and the power pellets. This will also include the code for the collision detection between the player and the enemies, the player and the points, and the player and the power pellets. This will also include the code for the score and the game over screen also, along with a countdown timer, lives functionality, 
-
 // This function prevents other code to run at the start of a game until a key or button is pressed.
 function startGame() {
     pauseGame = true;
@@ -72,9 +52,7 @@ function startGame() {
         document.addEventListener('keydown', keyDown);
         document.addEventListener('keyup', keyUp);
 
-        if (keyUp === true) {
-            pauseGame = false;
-        } else if (keyDown === true) {
+        if (keyUp() === true) {
             pauseGame = false;
         }
     }
